@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';
 import asyncHandler from 'express-async-handler';
 import * as exercises from './exercise_model.mjs';
 import { body, validationResult } from 'express-validator';
@@ -7,6 +8,10 @@ import { body, validationResult } from 'express-validator';
 const app = express();
 
 const PORT = process.env.PORT;
+
+const allowedOrgins = [
+    'https://derek-casini.github.io/Exercise_Tracker/'
+]
 
 app.use(express.json());
 
