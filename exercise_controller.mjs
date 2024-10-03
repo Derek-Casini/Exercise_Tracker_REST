@@ -9,9 +9,7 @@ const app = express();
 
 const PORT = process.env.PORT;
 
-const allowedOrgins = [
-    'https://derek-casini.github.io/Exercise_Tracker/'
-]
+app.use(cors());
 
 app.use(express.json());
 
